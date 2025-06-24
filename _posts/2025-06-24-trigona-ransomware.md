@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: default
 title: "Anatomía de un Compromiso de Ransomware: Trigona Ransomware"
 description: "Análisis detallado de un ataque real de ransomware llevado a cabo por el grupo Trigona en noviembre de 2023."
 date: 2023-11-15 10:00:00 +0200
 author: Merabytes
 tags: [ransomware, trigona, incident-response, malware, xdr]
-image: /assets/images/posts/trigona-ransomware.jpg
+image: https://media.licdn.com/dms/image/v2/D4D12AQGvJXnugt_Wxg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721751819863?e=1756339200&v=beta&t=gdb7-AePbjMn0lDvCJb3KP1rJ7BYr6myIIZ4iqlUhS4
 ---
 
 ## 🔑 Puntos clave
