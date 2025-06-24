@@ -1,1 +1,131 @@
-{{ content }}
+---
+layout: default
+title: "{{ page.title | default: site.title }}"
+description: "{{ page.description | default: site.description }}"
+author: "{{ page.author | default: site.author }}"
+date: {{ page.date | date: "%Y-%m-%d" }}
+image: "{{ page.image | default: site.default_image }}"
+categories: [{{ page.categories | join: ', ' }}]
+tags: [{{ page.tags | join: ', ' }}]
+---
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}">
+  <meta name="author" content="{{ page.author }}">
+  <title>{{ page.title }} | Merabytes</title>
+
+  <link rel="icon" href="https://merabytes.blob.core.windows.net/web/wp-content/uploads/2025/05/merabytes-icon-1-80x80-1.png" type="image/png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://merabytes.blob.core.windows.net/web/wp-content/uploads/2025/05/merabytes-icon-1-80x80-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/slicknav.min.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/all.min.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/animate.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/magnific-popup.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/mousecursor.css" rel="stylesheet">
+  <link href="https://merabytes.blob.core.windows.net/web/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  {% include header.html %}
+
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <div class="page-header-box">
+            <h1 class="wow fadeInUp" data-cursor="-opaque">{{ page.title }}</h1>
+            <div class="post-single-meta wow fadeInUp" data-wow-delay="0.2s">
+              <ol class="breadcrumb">
+                <li><i class="fa-regular fa-user"></i> {{ page.author }}</li>
+                <li><i class="fa-regular fa-clock"></i> {{ page.date | date: "%d %b, %Y" }}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-single-post">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          {% if page.image %}
+          <div class="post-image">
+            <figure class="image-anime reveal">
+              <img src="{{ page.image }}" alt="{{ page.title }}">
+            </figure>
+          </div>
+          {% endif %}
+
+          <div class="post-content">
+            <div class="post-entry">
+              {{ content }}
+            </div>
+
+            {% if page.tags %}
+            <div class="post-tag-links">
+              <div class="row align-items-center">
+                <div class="col-lg-8">
+                  <div class="post-tags wow fadeInUp" data-wow-delay="0.5s">
+                    <span class="tag-links">
+                      Tags:
+                      {% for tag in page.tags %}
+                      <a href="/tags/{{ tag }}">{{ tag }}</a>
+                      {% endfor %}
+                    </span>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="post-social-sharing wow fadeInUp" data-wow-delay="0.5s">
+                    <ul>
+                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include footer.html %}
+
+  <script src="https://merabytes.blob.core.windows.net/web/js/jquery-3.7.1.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/bootstrap.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/validator.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/jquery.slicknav.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/swiper-bundle.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/jquery.waypoints.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/jquery.counterup.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/jquery.magnific-popup.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/parallaxie.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/gsap.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/magiccursor.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/SplitText.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/ScrollTrigger.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/SmoothScroll.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/jquery.mb.YTPlayer.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/wow.min.js"></script>
+  <script src="https://merabytes.blob.core.windows.net/web/js/function.js"></script>
+</body>
+
+</html>
