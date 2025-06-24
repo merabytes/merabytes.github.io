@@ -1,0 +1,15 @@
+title: "Merabytes Blog"
+description: "Protege tu infraestructura frente al ransomware de la mano de Merabytes."
+author: "Merabytes"
+baseurl: ""
+url: "https://merabytes.github.io"
+paginate: 6
+paginate_path: "/blog/page:num"
+plugins:
+  - jekyll-paginate
+markdown: kramdown
+theme: minima
+favicon: "/assets/favicon.png"
+default_image: "/assets/default-cover.jpg"
+css_cdn: "https://merabytes.blob.core.windows.net/web/css"
+js_cdn: "https://merabytes.blob.core.windows.net/web/js"
